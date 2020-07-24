@@ -106,3 +106,6 @@ dist
 .tern-port
 
 package-lock.json
+uploads
+static
+build

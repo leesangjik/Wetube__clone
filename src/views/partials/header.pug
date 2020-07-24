@@ -1,0 +1,64 @@
+#inside-main.header
+    .header__container
+        .header__column
+            <i id ="burgerIcon"class="fas fa-bars opened"></i>
+            a(href=routes.home)
+                i.fab.fa-youtube
+                span.icon-name LeeTube
+                .kr-mark KR
+        .header__column
+            .form__container
+                form(action=routes.search, method="get")
+                    .search__container
+                        .search-input
+                            .input__container
+                                .keyboard-icon
+                                    <i id="keyboardIcon" class="fas fa-keyboard"></i>
+                                .input-box
+                                    input(id="search" type="text", placeholder="Search the term..", name="term",
+                                        style="width:100%; height:29px; border:none; outline:none;"  )
+                    button
+                        .search-icon
+                            <i class="fas fa-search"></i>    
+        .header__column
+            ul
+                if !user.isAuthenticated
+                    li(style="display:none")
+                        a(href=routes.join) Join
+                    li#loginBtn.loginbtn
+                        .login-container
+                            a(href=routes.login) 
+                                .login-box 
+                                    .login-usericon
+                                        <i class="fas fa-user"></i>
+                                    span.login-text 로그인
+
+                else
+                    li#videoIcon.video__container
+                        <i class="fas fa-video"></i>
+                        #videoExplain.explain__video 만들기
+                        #videoMenu.video-menu.hidden
+                            .video-menu__container
+                                .v-menu__container
+                                    a(href=`/videos${routes.upload}`)
+                                        .v-menu-icon
+                                            .v-icon__container
+                                                <i class="fas fa-upload"></i>
+                                        span.icon-text 동영상 업로드
+                                .v-menu__container
+                                    a(href=`/users${routes.streaming}`)
+                                        .v-menu-icon
+                                            .v-icon__container
+                                                <i class="fas fa-broadcast-tower"></i>
+                                        span.icon-text 실시간 스트리밍 시작
+                    li#thIcon.th__container
+                        <i class="fas fa-th"></i>
+                        #thExplain.explain__th LeeTube 앱
+                    li#bellIcon.bell__container
+                        <i class="fas fa-bell"></i>
+                        #bellExplain.explain__bell 알림           
+                    li.last-li
+                        .user-icon
+                            span SJ
+                    
+                
