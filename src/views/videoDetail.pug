@@ -4,13 +4,24 @@ block content
     .video__detail
         .video__player
             video(src=`${video.fileUrl}`  controls=false)
-        .video__info
-            a(href=routes.editVideo(video.id)) Edit Video
-            h5.video__title=video.title
-            span.video__views=video.views
-            p.video__description=video.description
-        .video__comments
-            if video.comments.length === 1
-                span.video__comment-number 1 comment
-            else
-                span.video__comment-number #{video.comments.length} comments
+        .video__explain-container
+            .video__explain    
+                .video__info
+                    h5.video__title=video.title
+                    .video__additional-information
+                        .video__view-container
+                            span.video__views=video.views
+                            if video.views < 1
+                                span.video__views-text  view
+                            else
+                                span.video__views-text  views
+                        .video__editbtn
+                            a(href=routes.editVideo(video.id)) Edit Video
+                                span 
+                                    <i class="far fa-edit"></i>
+                .video__comments
+                    if video.comments.length === 1
+                        span.video__comment-number 1 comment
+                    else
+                        span.video__comment-number #{video.comments.length} comments
+            
