@@ -3,10 +3,13 @@ include mixins/videoBlock
 
 block content 
     .contents
-          each item in videos
-            +videoBlock({
-              id:item.id,
-              title:item.title,
-              views:item.views,
-              videoFile:item.fileUrl
-            })
+          .recommended-textbox
+            span Recommended
+          .recommended-videos
+            each item in videos
+              +videoBlock({
+                id:item.id,
+                title:item.title,
+                views:item.views,
+                videoFile:item.fileUrl
+              })
