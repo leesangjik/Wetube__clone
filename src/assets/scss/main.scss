@@ -10,7 +10,7 @@ body {
   font-size: 14px;
 }
 
-main {
+.main {
   width: 100%;
   max-width: 1400px;
   min-height: 70vh;
@@ -21,6 +21,7 @@ main {
     padding-top: 20px;
     padding-left: 30px;
     width: 100%;
+    min-height: 82.8vh;
     .recommended-textbox{
       padding: 15px 0;
       span{
@@ -46,6 +47,7 @@ main {
     padding-top: 20px;
     padding-left: 30px;
     width: 100%;
+    min-height: 82.8vh;
     .search__header{
       padding: 15px 0;
       h3{
@@ -86,11 +88,86 @@ main {
     padding-top: 50px;
     width: 100%;
   }
+}
+
+.videoContent__main{
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  .guideline{
+    display: none;
+  }
+  .header{
+    background-color: #252525;
+    .header__container{
+      .header__column:nth-child(1){
+        .fa-bars{
+          color: white;
+        }
+        a{
+          .fa-youtube{
+            color: red($color: #000000);
+          }
+          span{
+            color: white;
+          }
+          .kr-mark{
+            color: rgba(128, 128, 128, 0.816);
+          }
+        }
+      }
+      .header__column:nth-child(2){
+        .form__container{
+          form{
+            border: 1px solid grey;
+            .search__container{
+              .search-input{
+                .input__container{
+                  .keyboard-icon{
+                    color: white;
+                  }
+                  .input-box{
+                    input{
+                      background-color: #252525;
+                    }
+                  }
+                }
+              }
+            }
+            button{
+              background-color: #363636;
+              .search-icon{
+                i{
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+      }
+      .header__column:nth-child(3){
+        li{
+          i{
+            color: white;
+          }
+        }
+      }
+    }
+  }
   .video__detail{
     margin-top: 61px;
-    padding-top: 20px;
-    margin-left: 170px;
-    padding-left: 20px;
     width: 100%;
+    min-height: 82.8vh;
+    .video__player{
+      max-width: 100%;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      video{
+        width: 100%;
+        height: 480px;
+      }
+    }
   }
 }

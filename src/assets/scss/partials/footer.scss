@@ -1,0 +1,11 @@
+.footer{
+    border-top: 1px solid grey;
+    padding: 20px 0;
+    text-align: center;
+    .footer__text{
+        font-size: 20px;
+        i{
+            margin-right: 10px;
+        }
+    }
+}

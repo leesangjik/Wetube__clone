@@ -5,8 +5,9 @@ html
         title #{pageTitle} | #{siteName}
         link(rel="stylesheet", href="/static/styles.css")
     body    
-        main
+        main.videoContent__main
             include ../partials/header
+            include ../partials/guideLine
             block content
         include ../partials/footer
         script(src="/static/main.js")
