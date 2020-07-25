@@ -32,6 +32,51 @@ main {
       display: flex;
       .videoBlock{
         margin-right: 15px;
+        a{
+          video{
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+  .search{
+    margin-top: 61px;
+    margin-left: 170px;
+    padding-top: 20px;
+    padding-left: 30px;
+    width: 100%;
+    .search__header{
+      padding: 15px 0;
+      h3{
+        font-size: 20px;
+      }
+    }
+    .search__video-container{
+      .search__videos{
+        h5{
+          font-size: 24px;
+        }
+        .searchBlock{
+          padding: 15px 0;
+          a{
+            .searchBlock__container{
+              display: flex;
+              .searchBlock__video{
+                margin-right: 10px;
+              }
+              .searchBlock__explain{
+                h1{
+                  font-size: 22px;
+                  margin-bottom: 5px;
+                }
+                h6{
+                  margin-bottom: 10px;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -43,8 +88,8 @@ main {
   }
   .video__detail{
     margin-top: 61px;
-    margin-left: 170px;
     padding-top: 20px;
+    margin-left: 170px;
     padding-left: 20px;
     width: 100%;
   }

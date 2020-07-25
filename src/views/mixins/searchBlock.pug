@@ -1,0 +1,11 @@
+mixin searchBlock(video = {})
+    .searchBlock
+        a(href=routes.videoDetail(video.id))
+            .searchBlock__container
+                .searchBlock__video
+                    video.videoBlock__thumbnail(src=video.videoFile controls=false width="250" heigth="140")
+                .searchBlock__explain
+                    h1.videBlock__title=video.title
+                    h6.videoBlock__views=video.views
+                    p.videoBlock__description=video.description
+    
