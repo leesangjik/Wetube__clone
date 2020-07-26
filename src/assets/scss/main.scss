@@ -84,11 +84,33 @@ body {
       }
     }
   }
-  .form-container{
+  .edit__video{
     margin-top: 61px;
     margin-left: 170px;
     padding-top: 50px;
+    padding-left: 50px;
     width: 100%;
+    min-height: 82.8vh;
+    .edit__text{
+      font-size: 20px;
+      padding: 15px 0;
+    }
+    .form-container{
+      form{
+        margin-bottom: 20px;
+        .title__input, .description__textarea{
+          display: flex;
+          align-items: center;
+          line-height: 50px;
+          .formDescription{
+            margin-right: 30px;
+          }
+          .formTitle{
+            margin-right: 72px;
+          }
+        }
+      }
+    }
   }
 }
 
