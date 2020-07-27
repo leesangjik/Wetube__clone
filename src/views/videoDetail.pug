@@ -3,7 +3,29 @@ extends layouts/videoContent
 block content 
     .video__detail
         .video__player
-            video(src=`${video.fileUrl}`  controls=true)
+            video#videoPlayer(src=`${video.fileUrl}`  controls=false autoplay=true preload='metadata')
+            .video__controller-container
+                .video__controller-column
+                    .video__loadingbar
+                .video__controller-column
+                    .video__option-column
+                        #playBtn.playbtn-box
+                            span.playbutton
+                                <i class="fas fa-play"></i>
+                        .stepforwardbtn-box
+                            span#setpForwardBtn.stepforwardbutton
+                                <i class="fas fa-step-forward"></i>
+                        .volumebtn-box
+                            span#volumeBtn.volumebutton
+                                <i class="fas fa-volume-up"></i>
+                        .durationtime-box
+                            span#currentTime 00:00
+                            |  / 
+                            span#durationTime 00:00 
+                    .video__option-column
+                        .settingbtn-box
+                            span#settingBtn.settingbutton
+                                <i class="fas fa-cog" style="color:white;"></i>
         .video__explain-container
             .video__explain    
                 .video__info

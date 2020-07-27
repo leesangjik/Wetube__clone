@@ -112,6 +112,45 @@ body {
       }
     }
   }
+  .upload__video{
+    margin-top: 61px;
+    margin-left: 170px;
+    padding-top: 50px;
+    padding-left: 50px;
+    width: 100%;
+    min-height: 82.8vh;
+    .upload.text{
+      h1{
+        font-size: 20px;
+        padding: 15px 0;
+      }
+    }
+    .form-container{
+      form{
+        .video__input,.title__input,.description__textarea{
+          margin: 15px 0;
+        }
+        .video__input{
+          label{
+            margin-right: 10px;
+          }
+        }
+        .title__input,.description__textarea{
+          line-height: 50px;
+          .formTitle{
+            margin-right: 49px;
+          }
+          .formDescription{
+            margin-right: 5px;
+          }
+        }
+        .description__textarea{
+          display: flex;
+          align-items: center;
+        }
+      }
+      }
+  }
 }
 
 .videoContent__main{
@@ -208,6 +247,71 @@ body {
       video{
         width: 100%;
         height: 540px;
+      }
+      .video__controller-container{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px 15px ;
+        .video__controller-column:nth-child(2){
+          position: relative;
+          display: flex;
+          .video__option-column:nth-child(1){
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            .playbtn-box,.stepforwardbtn-box,.volumebtn-box{
+              height: 30px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              cursor: pointer;
+              color: white;
+              span{
+                i{
+                  color: white;
+                }
+              }
+            }
+            .durationtime-box{
+              color: white;
+              span{
+                color: white;
+              }
+            }
+            .playbtn-box{
+              width: 50px;
+            }
+            .stepforwardbtn-box{
+              width: 35px;
+              margin-right: 5px;
+            }
+            .volumebtn-box{
+              width: 30px;
+              margin-right: 10px;
+            }
+          }
+          .video__option-column:nth-child(2){
+            position: absolute;
+            right: 0;
+            display: flex;
+            align-items: center;
+            .settingbtn-box{
+              width: 30px;
+              height: 30px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              span{
+                i{
+                  font-size: 18px;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
       }
     }
     .video__explain-container{
