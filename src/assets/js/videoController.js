@@ -7,7 +7,6 @@ const videoDuration = document.getElementById("durationTime");
 const handlePlayBtn = () => {
     if (videoPlayer.paused) {
         videoPlayer.play();
-        console.dir(videoPlayer);
         playBtn.innerHTML = '<i class="fas fa-pause"></i>';
     } else {
         videoPlayer.pause();
@@ -76,7 +75,7 @@ const init = () => {
     videoPlayer.addEventListener("loadedmetadata", handleMetadata);
     videoPlayer.addEventListener("ended", handleVideoEnded);
     window.addEventListener("keypress", handleKeypressPlay);
-    console.dir(videoPlayer);
+    videoPlayer.setAttribute('autoplay', 'true');
 }
 
 if (videoPlayer) {
