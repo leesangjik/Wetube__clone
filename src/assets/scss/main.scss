@@ -10,16 +10,28 @@ body {
   font-size: 14px;
 }
 
+//set content position
+.main{
+  width: 100%;
+  max-width: 1400px;
+  min-height: 70vh;
+  display: flex;
+  .contents,.search,.edit__video,.upload__video{
+    margin-top: 61px;
+    margin-left: 200px;
+    padding-top: 20px;
+    padding-left: 30px;
+  }
+}
+//
+
+
 .main {
   width: 100%;
   max-width: 1400px;
   min-height: 70vh;
   display: flex;
   .contents{
-    margin-top: 61px;
-    margin-left: 170px;
-    padding-top: 20px;
-    padding-left: 30px;
     width: 100%;
     min-height: 82.8vh;
     .recommended-textbox{
@@ -44,10 +56,6 @@ body {
     }
   }
   .search{
-    margin-top: 61px;
-    margin-left: 170px;
-    padding-top: 20px;
-    padding-left: 30px;
     width: 100%;
     min-height: 82.8vh;
     .search__header{
@@ -85,10 +93,6 @@ body {
     }
   }
   .edit__video{
-    margin-top: 61px;
-    margin-left: 170px;
-    padding-top: 50px;
-    padding-left: 50px;
     width: 100%;
     min-height: 82.8vh;
     .edit__text{
@@ -113,10 +117,6 @@ body {
     }
   }
   .upload__video{
-    margin-top: 61px;
-    margin-left: 170px;
-    padding-top: 50px;
-    padding-left: 50px;
     width: 100%;
     min-height: 82.8vh;
     .upload.text{

@@ -1,12 +1,13 @@
 const videoPlayer = document.getElementById("videoPlayer");
 const playBtn = document.getElementById("playBtn");
 const videoDuration = document.getElementById("durationTime");
-const videoCurrentTime = document.getElementById("currentTime");
+//const videoCurrentTime = document.getElementById("currentTime");
 
 
 const handlePlayBtn = () => {
     if (videoPlayer.paused) {
         videoPlayer.play();
+        console.dir(videoPlayer);
         playBtn.innerHTML = '<i class="fas fa-pause"></i>';
     } else {
         videoPlayer.pause();
@@ -49,10 +50,35 @@ const handleVideoEnded = () => {
     playBtn.innerHTML = '<i class="fas fa-reply"></i>';
 }
 
-const init = () => {
-    playBtn.addEventListener("click", handlePlayBtn);
-    videoPlayer.addEventListener("loadedmetadata", handleMetadata);
-    videoPlayer.addEventListener("ended", handleVideoEnded);
+const handleVideoPlay = () => {
+    if (videoPlayer.played) {
+        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+    }
 }
 
-init();
+const handleKeypressPlay = (event) => {
+    var keyCode = event.keyCode;
+    if (keyCode === 32) {
+        event.preventDefault();
+    }
+    if (keyCode === 32 && videoPlayer.paused) {
+        videoPlayer.play();
+        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+    } else if (keyCode === 32 && videoPlayer.played) {
+        videoPlayer.pause();
+        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+    }
+}
+
+const init = () => {
+    playBtn.addEventListener("click", handlePlayBtn);
+    videoPlayer.addEventListener("play", handleVideoPlay);
+    videoPlayer.addEventListener("loadedmetadata", handleMetadata);
+    videoPlayer.addEventListener("ended", handleVideoEnded);
+    window.addEventListener("keypress", handleKeypressPlay);
+    console.dir(videoPlayer);
+}
+
+if (videoPlayer) {
+    init();
+}
