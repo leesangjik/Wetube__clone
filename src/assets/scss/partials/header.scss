@@ -109,6 +109,40 @@
                     margin-right: 10px;
                     cursor: pointer;
                 }
+                .joinbtn{
+                    width: 80px;
+                    .join-container{
+                        width: 100%;
+                        height: 30px;
+                        border: .5px solid blue;
+                        display: flex;
+                        align-items: center;
+                        a{
+                            .join-box{
+                                display: flex;
+                                align-items: center;
+                                padding: 0px 5px;
+                                .join-usericon{
+                                    width: 18px;
+                                    height: 18px;
+                                    border-radius: 50%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    background-color: rgba(0, 38, 255, 0.719);
+                                    margin-right: 5px;
+                                    i{
+                                        color: white;
+                                        font-size: 8px;
+                                    }
+                                }
+                                span{
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
                 .loginbtn{
                     width: 80px;
                     .login-container{

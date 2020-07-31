@@ -23,16 +23,20 @@
         .header__column
             ul
                 if !user.isAuthenticated
-                    li(style="display:none")
-                        a(href=routes.join) Join
+                    li#joinBtn.joinbtn
+                        .join-container
+                            a(href=routes.join)
+                                .join-box
+                                    .join-usericon
+                                        <i class="fas fa-user"></i>
+                                    span.join-text Join
                     li#loginBtn.loginbtn
                         .login-container
                             a(href=routes.login) 
                                 .login-box 
                                     .login-usericon
                                         <i class="fas fa-user"></i>
-                                    span.login-text 로그인
-
+                                    span.login-text Login
                 else
                     li#videoIcon.video__container
                         <i class="fas fa-video"></i>

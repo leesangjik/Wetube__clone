@@ -3,7 +3,7 @@ extends layouts/videoContent
 block content 
     .video__detail
         .video__player
-            video#videoPlayer(src=`${video.fileUrl}`  controls=false preload='metadata')
+            video#videoPlayer(src=`${video.fileUrl}` controls=false preload='metadata')
             .video__controller-container
                 .video__controller-column
                     .video__loadingbar

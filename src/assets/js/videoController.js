@@ -70,12 +70,12 @@ const handleKeypressPlay = (event) => {
 }
 
 const init = () => {
+    videoPlayer.setAttribute('autoplay', 'true');
     playBtn.addEventListener("click", handlePlayBtn);
     videoPlayer.addEventListener("play", handleVideoPlay);
     videoPlayer.addEventListener("loadedmetadata", handleMetadata);
     videoPlayer.addEventListener("ended", handleVideoEnded);
     window.addEventListener("keypress", handleKeypressPlay);
-    videoPlayer.setAttribute('autoplay', 'true');
 }
 
 if (videoPlayer) {
