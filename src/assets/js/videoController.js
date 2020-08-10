@@ -78,6 +78,4 @@ const init = () => {
     window.addEventListener("keypress", handleKeypressPlay);
 }
 
-if (videoPlayer) {
-    init();
-}
+init();
