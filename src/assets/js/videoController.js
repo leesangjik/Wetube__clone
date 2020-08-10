@@ -1,7 +1,7 @@
 const videoPlayer = document.getElementById("videoPlayer");
 const playBtn = document.getElementById("playBtn");
 const videoDuration = document.getElementById("durationTime");
-//const videoCurrentTime = document.getElementById("currentTime");
+const videoCurrentTime = document.getElementById("currentTime");
 
 
 const handlePlayBtn = () => {
@@ -32,17 +32,18 @@ function formatData(seconds) {
     return `${minutes}:${totalSeconds}`;
 }
 
+const getCurrentTime = () => {
+    videoCurrentTime.innerHTML = formatData(videoPlayer.currentTime);
+    console.log(videoCurrentTime, videoPlayer.duration);
+}
 
-
-const setTotal = () => {
+const setTotalTime = () => {
+    console.log("Metadata loaded!");
     const totalTime = formatData(videoPlayer.duration);
     videoDuration.innerHTML = totalTime;
+    setInterval(getCurrentTime, 1000);
 }
 
-const handleMetadata = () => {
-    console.log("Metadata loaded!");
-    setTotal();
-}
 
 const handleVideoEnded = () => {
     videoPlayer.currentTime = 0;
@@ -73,7 +74,7 @@ const init = () => {
     videoPlayer.setAttribute('autoplay', 'true');
     playBtn.addEventListener("click", handlePlayBtn);
     videoPlayer.addEventListener("play", handleVideoPlay);
-    videoPlayer.addEventListener("loadedmetadata", handleMetadata);
+    videoPlayer.addEventListener("loadedmetadata", setTotalTime);
     videoPlayer.addEventListener("ended", handleVideoEnded);
     window.addEventListener("keypress", handleKeypressPlay);
 }
