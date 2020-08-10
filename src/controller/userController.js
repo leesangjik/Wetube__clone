@@ -15,15 +15,16 @@ export const postJoin = async (req, res, next) => {
         res.render("join", { pageTitle: "Join" });
     } else {
         try {
-            const user = await User.create({
+            const user = await User({
                 name,
                 email
             });
             await User.register(user, password);
+            next();
         } catch (err) {
             console.log(err);
+            res.redirect(routes.home)
         }
-        res.redirect(routes.home)
     }
 };
 

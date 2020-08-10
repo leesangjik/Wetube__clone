@@ -22,7 +22,7 @@
                             <i class="fas fa-search"></i>    
         .header__column
             ul
-                if !user.isAuthenticated
+                if !user
                     li#joinBtn.joinbtn
                         .join-container
                             a(href=routes.join)
