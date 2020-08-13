@@ -22,7 +22,7 @@
                             <i class="fas fa-search"></i>    
         .header__column
             ul
-                if !user
+                if !loggedUser
                     li#joinBtn.joinbtn
                         .join-container
                             a(href=routes.join)
@@ -40,7 +40,7 @@
                 else
                     li#videoIcon.video__container
                         <i class="fas fa-video"></i>
-                        #videoExplain.explain__video 만들기
+                        #videoExplain.explain__video Create
                         #videoMenu.video-menu.hidden
                             .video-menu__container
                                 .v-menu__container
@@ -55,12 +55,13 @@
                                             .v-icon__container
                                                 <i class="fas fa-broadcast-tower"></i>
                                         span.icon-text 실시간 스트리밍 시작
-                    li#thIcon.th__container
-                        <i class="fas fa-th"></i>
-                        #thExplain.explain__th LeeTube 앱
+                    li#thIcon.profile__container
+                        a(href=routes.principal)
+                            <i class="fas fa-id-badge"></i>
+                            #profile.profile Profile
                     li#bellIcon.bell__container
                         <i class="fas fa-bell"></i>
-                        #bellExplain.explain__bell 알림           
+                        #bellExplain.explain__bell Notice           
                     li.last-li
                         .user-icon
                             span SJ

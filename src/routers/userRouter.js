@@ -11,4 +11,5 @@ userRouter.get(routes.editProfile, onlyPrivate, editProfile);
 userRouter.get(routes.changePassword, changePassword);
 userRouter.get(routes.userDetail(), userDetail);
 
+
 export default userRouter;

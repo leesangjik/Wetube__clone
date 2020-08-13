@@ -43,24 +43,50 @@ export const logout = (req, res) => {
 
 export const githubLogin = passport.authenticate('github');
 
-export const githubLoginCallback = async (accessToken, refreshToken, profile, cb) => {
-    console.log(accessToken, refreshToken, profile, cb);
-    /* const { _json: { id, avatar_url, name, email } } = profile;
+export const githubLoginCallback = async (_, __, profile, cb) => {
+    //console.log(accessToken, refreshToken, profile, cb);
+    const { _json: { id, avatar_url, name, email } } = profile;
     try {
         const user = await User.findOne({ email });
-        console.log(user);
+        if (user) {
+            user.githubId = id;
+            user.avatarUrl = avatar_url;
+            user.name = name;
+            user.save();
+            return cb(null, user);
+        }
+        const newUser = await User.create({
+            email,
+            name,
+            githubId: id,
+            avatarUrl: avatar_url
+        });
+        return cb(null, newUser);
     } catch (err) {
         return cb(err);
-    } */
+    }
 };
 
 export const postGithubLogin = (req, res) => {
-    res.send(routes.home);
+    res.redirect(routes.home);
 }
 
 export const user = (req, res) => res.render("users", { pageTitle: "Users" });
 
-export const streaming = (req, res) => res.render("streaming")
-export const userDetail = (req, res) => res.render("userDetail", { pageTitle: "User Detail" });
+export const streaming = (req, res) => res.render("streaming");
+
+export const principal = (req, res) => {
+    res.render("userDetail", { pageTitle: "User Detail", user: req.user });
+}
+export const userDetail = async (req, res) => {
+    const { params: { id } } = req;
+    try {
+        const user = await User.findById(id);
+        res.render("userDetail", { pageTitle: "User Detail", user });
+    } catch (err) {
+        res.redirect(routes.home);
+        console.log(err);
+    }
+}
 export const editProfile = (req, res) => res.render("editProfile", { pageTitle: "Edit Profile" });
 export const changePassword = (req, res) => res.render("changePassword", { pageTitle: "Change Password" });

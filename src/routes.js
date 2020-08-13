@@ -15,6 +15,7 @@ const USER_DETAIL = "/:id";
 const USER_STREAMING = "/streaming-now"
 const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
+const PRINCIPAL = '/principal';
 
 
 //GITHUB
@@ -39,6 +40,7 @@ const routes = {
     subscribe: SUBSCRIBE,
     search: SEARCH,
     users: USERS,
+    principal: PRINCIPAL,
     streaming: USER_STREAMING,
     userDetail: (id) => {
         if (id) {

@@ -11,9 +11,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding-left: 5px;
+            padding : 0 14px 0 8px;
             .fa-bars{
-                margin-right: 20px;
+                margin: 0 10px;
                 display: flex;
                 align-items: center;
                 height: 24px;
@@ -22,7 +22,7 @@
             a{
                 display: flex;
                 font-size: 16px;
-                margin-right: 2px;
+                margin: 0 5px;
                 height: 24px;
                 color: inherit;
                 align-items: center;
@@ -238,7 +238,7 @@
                         }
                     }
                 }
-                .explain__video, .explain__th, .explain__bell{
+                .explain__video, .profile, .explain__bell{
                     position: absolute;
                     top: 58px;
                     font-size: 10px;
@@ -252,7 +252,7 @@
                     display: none;
                 }
                 .explain__video{
-                    width: 40px;
+                    width: 50px;
                     border-radius: 3px;
                 }
                 .video__container:hover{
@@ -261,20 +261,28 @@
                         transition: display 1s ease-in-out;
                     }
                 }
-                .explain__th{
-                    width: 60px;
-                    left: 32px;
-                    border-radius: 3px;
-                }
-                .th__container:hover{
-                    .explain__th{
-                        display: flex;
-                        transition: display 1s ease-in-out;
+                .profile__container{
+                    a{
+                        color: inherit;
                     }
                 }
+                .profile{
+                    width: 60px;
+                    left: 28px;
+                    border-radius: 3px;
+                }
+                .profile__container:hover{
+                    a{
+                        .profile{
+                            display: flex;
+                            transition: display 1s ease-in-out;
+                        }
+                    }
+                    
+                }
                 .explain__bell{
-                    width: 36px;
-                    right: 44px;
+                    width: 56px;
+                    right: 36px;
                     border-radius: 3px;
                 }
                 .bell__container:hover{

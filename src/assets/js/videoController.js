@@ -74,7 +74,6 @@ const handleKeypressPlay = (event) => {
 }
 
 const init = () => {
-    videoPlayer.setAttribute('autoplay', 'true');
     playBtn.addEventListener("click", handlePlayBtn);
     videoPlayer.addEventListener("play", handleVideoPlay);
     videoPlayer.addEventListener("loadedmetadata", setTotalTime);
